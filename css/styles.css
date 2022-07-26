@@ -16,6 +16,8 @@
   --icon-background: rgba(255, 255, 255, 0.1);
   --icon-color: #eeeeee;
   --secound-icons-color: #afb1b8;
+  --hidden-box-background: #2196f3e5;
+  --work-description-background: #2f303acc;
 }
 body {
   font-family: "roboto", "raleway", sans-serif;
@@ -86,22 +88,24 @@ body {
   letter-spacing: 0.02em;
   list-style: none;
   display: flex;
-  margin-right: 340px;
+  margin-right: 345px;
 }
 
 .menu-items > a {
   text-decoration: none;
   color: var(--text);
+  position: relative;
 }
 .menu-items:nth-child(1) {
   margin-right: 46px;
 }
 .menu-items:nth-child(2) {
-  margin-right: 47px;
+  margin-right: 46px;
 }
 .menu-items a:focus,
 .menu-items a:hover {
   color: var(--link-focus);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contact {
   display: flex;
@@ -129,7 +133,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--info-color);
   text-decoration: none;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 .mail:hover,
 .mail:focus,
@@ -137,8 +141,18 @@ body {
 .tel:focus {
   color: var(--link-focus);
   fill: var(--link-focus);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 45.5px;
+  background: var(--main-color);
+  height: 4px;
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
 /* ----------MENU-END---------- */
 
 /* ====================HEADER-END==================== */
@@ -239,6 +253,24 @@ body {
 .secound-icon {
   fill: #212121;
 }
+.working-list > li {
+  display: flex;
+  position: relative;
+}
+.working-on-description {
+  position: absolute;
+  background-color: var(--work-description-background);
+  width: 100%;
+  height: 23.8%;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secound-text);
+  padding-top: 27px;
+  bottom: 0;
+}
 /* ----------WORKING-ON-END---------- */
 
 /* ----------TEAM-START---------- */
@@ -303,6 +335,7 @@ body {
 .team-icons > li > a:focus {
   background-color: var(--main-color);
   fill: var(--focus-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ----------TEAM-END---------- */
@@ -337,6 +370,7 @@ body {
 .our-clients > li > a:focus {
   outline-color: var(--main-color);
   fill: var(--main-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ----------CLIENTS-END---------- */
@@ -388,6 +422,7 @@ body {
 .footer-tel:focus,
 .footer-tel:hover {
   color: var(--link-focus);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join {
   display: flex;
@@ -418,6 +453,7 @@ body {
 .join-icons > li > a:hover,
 .join-icons > li > a:focus {
   background-color: var(--main-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ====================FOOTER-END==================== */
 
@@ -444,6 +480,7 @@ body {
   cursor: pointer;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button {
   font-family: "Roboto";
@@ -464,18 +501,18 @@ body {
 
 /* ----------EXPIRIENCES-START---------- */
 
-.expiriences-list {
+.experiences-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 94px;
 }
-.expiriences-list li a:hover {
+.experiences-list li a:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.expiriences-list li a {
+.experiences-list li a {
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -489,7 +526,7 @@ body {
   letter-spacing: 0.06em;
   margin-bottom: 4px;
 }
-.experiences-border > a > p {
+.experiences-border > p {
   font-size: 16px;
   line-height: 1.89;
   color: var(--info-color);
@@ -500,10 +537,74 @@ body {
   border-right: 1px solid var(--border-color);
   padding: 20px 24px;
 }
-
+.base-box {
+  position: relative;
+  overflow: hidden;
+}
+.hidden-text {
+  display: flex;
+  position: absolute;
+  background-color: var(--hidden-box-background);
+  width: 100%;
+  height: 100%;
+  padding: 49px 45px 49px 24px;
+  color: var(--secound-text);
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.experiences-list > li:hover .hidden-text {
+  transform: translateY(-100%);
+}
 /* ----------EXPIERIENCES-END---------- */
 
 /* ====================MAIN-END==================== */
 
 /* ====================================PORTFOLIO-END====================================== */
 /* ((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))) */
+
+/* ====================================BACKDROP====================================== */
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 750ms, visibility 750ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-window {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  left: 536px;
+  top: 221px;
+  background: var(--background);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close-modal:hover,
+.close-modal:focus {
+  background-color: var(--main-color);
+}

@@ -25,7 +25,7 @@
         <nav>
           <ul class="general-menu">
             <li class="menu-items">
-              <a href="agencja">Agencja</a>
+              <a class="active" href="index.html">Agencja</a>
             </li>
             <li class="menu-items">
               <a href="portfolio.html">Portfolio</a>
@@ -60,10 +60,15 @@
           EFEKTYWNE ROZWIĄZANIA <br />DLA WASZEGO BIZNESU
         </h1>
         <section class="button-section">
-          <button class="order-button" type="button">
+          <button class="order-button" type="button" data-modal-open>
             <span>Zamów usługę</span>
           </button>
         </section>
+            <section class="backdrop is-hidden" data-modal>
+              <section class="modal-window">
+               <button type="button" class="close-modal" data-modal-close>&#10006</button>
+              </section>
+            </section>
       </article>
       <section class="container">
         <ul class="article-list">
@@ -121,6 +126,9 @@
         <h2 class="secoundary-header">Czym się zajmujemy</h2>
         <ul class="working-list">
           <li>
+            <section class="working-on-description">
+              <p>Aplikacje komputerowe</p>
+            </section>
             <img
               src="./images/programing.jpg"
               alt="close-up-image programer working his desk office"
@@ -128,8 +136,10 @@
               height="294"
             />
           </li>
-
           <li>
+            <section class="working-on-description">
+              <p>Aplikacje mobilne</p>
+            </section>
             <img
               src="./images/application-design.jpg"
               alt="web ui designers are developing application smartphones team creators is working interface mobile phones"
@@ -137,8 +147,10 @@
               height="294"
             />
           </li>
-
           <li>
+            <section class="working-on-description">
+              <p>Rozwiązania graficzne</p>
+            </section>
             <img
               src="./images/web-artist.jpg"
               alt="creative artist web design with working colour selection graphic tablet"
@@ -431,4 +443,7 @@
       </section>
     </footer>
   </body>
+
+  
+  <script src="./js/modal.js"></script>
 </html>
